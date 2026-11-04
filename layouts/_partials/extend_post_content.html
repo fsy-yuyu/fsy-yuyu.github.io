@@ -1,0 +1,9 @@
+{{- /* 文章正文末尾的附加信息：分类 + 永久链接。想加打赏/版权声明也写在这里 */ -}}
+<div class="post-endnote">
+  {{- with (.GetTerms "categories") }}
+  <div class="post-categories">
+    {{- range . }}<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end }}
+  </div>
+  {{- end }}
+  <span>本文链接：<a href="{{ .Permalink }}">{{ .Permalink }}</a></span>
+</div>

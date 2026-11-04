@@ -1,0 +1,165 @@
+# ============================================================
+#  技术笔记博客 · Hugo + PaperMod 配置
+#  你只需要改「基础信息」这一段，其余保持默认即可。
+#  改完保存，提交到 GitHub，网站会在 1~2 分钟内自动更新。
+# ============================================================
+
+# ---------- 基础信息（改这里） ----------
+# 本地预览时用下面的地址即可；部署到 GitHub 时由工作流自动替换成你的真实网址，
+# 所以这里不需要填你的域名。
+baseURL = "http://localhost:1313/"
+
+# 网站标题，显示在左上角和浏览器标签上
+title = "技术笔记"
+
+# 主题名（不要改）
+theme = "PaperMod"
+
+# ---------- 语言与输出 ----------
+defaultContentLanguage = "zh"
+languageCode = "zh-CN"
+hasCJKLanguage = true          # 中文按字计算字数，阅读时间更准
+enableRobotsTXT = true
+enableEmoji = true
+timeZone = "Asia/Shanghai"     # 文章日期按北京时间显示
+
+[pagination]
+  pagerSize = 12               # 首页每页显示 12 篇
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]   # JSON 是站内搜索用的索引，别删
+  section = ["HTML", "RSS"]
+
+# ---------- 永久链接：让网址变成 /posts/2025/09/标题/ ----------
+# 这样网址里带年月，和「按年月归档」对得上，也方便以后搬运文章。
+[permalinks]
+  posts = "/posts/:year/:month/:contentbasename/"
+
+# ---------- Markdown 解析 ----------
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true              # 允许在文章里直接写 <img> 等 HTML，方便排版
+    [markup.goldmark.parser]
+      autoHeadingID = true
+      autoHeadingIDType = "github"
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      strikethrough = true
+      table = true
+      taskList = true
+  [markup.highlight]
+    noClasses = false            # 配合主题的代码高亮配色
+    codeFences = true
+    guessSyntax = true
+    lineNos = false
+    tabWidth = 4
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
+    ordered = false
+
+# ---------- 主题参数 ----------
+[params]
+  env = "production"
+  description = "记录 Linux、容器、数据库、前端与工具链的技术笔记。"
+  keywords = ["技术笔记", "Linux", "Docker", "Python", "MySQL", "前端", "效率工具"]
+  author = "你的名字"                 # ← 改成你的名字/昵称
+  DateFormat = "2006-01-02"
+  defaultTheme = "auto"               # auto 跟随系统深色/浅色，可改 light / dark
+  disableThemeToggle = false
+  disableLangToggle = true            # 单语言站点，关掉语言切换按钮
+
+  # 页面元素开关
+  ShowReadingTime = true
+  ShowWordCount = true
+  ShowCodeCopyButtons = true          # 代码块右上角「复制」按钮
+  ShowToc = true                      # 文章目录（可在单篇文章里用 toc: false 关掉）
+  TocOpen = false
+  ShowBreadCrumbs = true
+  ShowPostNavLinks = true             # 上一篇/下一篇
+  ShowRssButtonInSectionTermList = true
+  ShowShareButtons = false            # 分享按钮，想开就改 true
+  ShowAllPagesInArchive = false
+  mainSections = ["posts"]            # 只把 content/posts 下的文章算进首页/归档
+
+  # 首页欢迎语（homeInfo 模式）
+  [params.homeInfoParams]
+    Title = "你好，我是「你的名字」"
+    Content = """
+这里是我的技术笔记本：把学过的 Linux、容器、数据库、前端和工具链，
+按主题整理成能直接照着做的笔记。
+
+- 想按时间翻 → [归档](/archives/)
+- 想按方向翻 → [分类](/categories/)
+- 想直接搜 → [搜索](/search/)
+"""
+
+  # 社交图标（不需要的删掉即可）
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/你的GitHub用户名"
+
+  [[params.socialIcons]]
+    name = "rss"
+    url = "/index.xml"
+
+  # 封面图默认行为
+  [params.cover]
+    responsiveImages = true
+    linkFullImages = true            # 点封面看大图
+
+  # 站内搜索（Fuse.js）参数
+  [params.fuseOpts]
+    iscasesensitive = false
+    shouldsort = true
+    location = 0
+    distance = 100
+    threshold = 0.4
+    minmatchcharlength = 1
+    includematches = false
+    limit = 20
+    keys = ["title", "permalink", "summary", "content"]
+
+  # 「编辑此页」链接：填上你的仓库地址后，每篇文章底部会出现直达 GitHub 编辑按钮
+  # [params.editPost]
+  #   URL = "https://github.com/你的GitHub用户名/你的仓库名/edit/main/content/"
+  #   Text = "在 GitHub 上编辑本文"
+  #   AppendFilePath = true
+
+# ---------- 顶部导航 ----------
+[[menus.main]]
+  name = "首页"
+  url = "/"
+  weight = 10
+
+[[menus.main]]
+  name = "归档"
+  url = "/archives/"
+  weight = 20
+
+[[menus.main]]
+  name = "分类"
+  url = "/categories/"
+  weight = 30
+
+[[menus.main]]
+  name = "标签"
+  url = "/tags/"
+  weight = 40
+
+[[menus.main]]
+  name = "搜索"
+  url = "/search/"
+  weight = 50
+
+[[menus.main]]
+  name = "关于"
+  url = "/about/"
+  weight = 60
+
+# ---------- 分类与标签 ----------
+[taxonomies]
+  category = "categories"
+  tag = "tags"

@@ -1,0 +1,81 @@
+{{- define "main" }}
+
+<header class="page-header">
+  <h1>{{ .Title }}</h1>
+  {{- if .Description }}
+  <div class="post-description">{{ .Description }}</div>
+  {{- end }}
+</header>
+
+{{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+{{- if site.Params.ShowAllPagesInArchive }}
+  {{- $pages = site.RegularPages }}
+{{- end }}
+{{- $pages = where $pages "Params.hiddenInArchive" "!=" true }}
+{{- $years := $pages.GroupByPublishDate "2006" }}
+
+{{- /* 顶部年份快速跳转 */}}
+{{- if gt (len $years) 1 }}
+<nav class="archive-nav" aria-label="年份跳转">
+  {{- range $years }}
+    {{- if ne .Key "0001" }}
+    <a class="archive-chip" href="#y{{ .Key }}">{{ .Key }}<span class="archive-count">{{ len .Pages }} 篇</span></a>
+    {{- end }}
+  {{- end }}
+</nav>
+{{- end }}
+
+<div class="archive-total">共 {{ len $pages }} 篇笔记</div>
+
+{{- range $years }}
+{{- if ne .Key "0001" }}
+{{- $year := .Key }}
+<section class="archive-year" id="y{{ $year }}">
+  <h2 class="archive-year-header">
+    <a class="archive-header-link" href="#y{{ $year }}">{{ $year }} 年</a>
+    <span class="archive-count">{{ len .Pages }} 篇</span>
+  </h2>
+
+  {{- range .Pages.GroupByDate "01" }}
+  {{- $month := strings.TrimLeft "0" .Key }}
+  <div class="archive-month">
+    <h3 class="archive-month-header" id="m{{ $year }}-{{ .Key }}">
+      <a class="archive-header-link" href="#m{{ $year }}-{{ .Key }}">
+        {{ $month }} 月
+      </a>
+      <span class="archive-count">{{ len .Pages }} 篇</span>
+    </h3>
+    <div class="archive-posts">
+      {{- range .Pages }}
+      {{- if eq .Kind "page" }}
+      <div class="archive-entry">
+        <div class="archive-entry-head">
+          <a class="archive-entry-title" href="{{ .RelPermalink }}">{{ .Title }}</a>
+          {{- if .Draft }}
+          <span class="archive-draft">草稿</span>
+          {{- end }}
+        </div>
+        <div class="archive-meta">
+          <span>{{ .Date.Format "01-02" }}</span>
+          {{- with (.GetTerms "categories") }}
+          <span class="archive-cats">
+            {{- range $i, $c := . }}{{ if $i }} · {{ end }}<a href="{{ $c.RelPermalink }}">{{ $c.LinkTitle }}</a>{{- end }}
+          </span>
+          {{- end }}
+          {{- if .Params.tags }}<span>{{ range $i, $t := .Params.tags }}{{ if $i }} · {{ end }}#{{ $t }}{{ end }}</span>{{ end }}
+        </div>
+      </div>
+      {{- end }}
+      {{- end }}
+    </div>
+  </div>
+  {{- end }}
+</section>
+{{- end }}
+{{- end }}
+
+{{- if not $pages }}
+<p class="archive-empty">还没有笔记，去 <code>content/posts/</code> 新建一篇吧。</p>
+{{- end }}
+
+{{- end }}{{/* end main */}}
