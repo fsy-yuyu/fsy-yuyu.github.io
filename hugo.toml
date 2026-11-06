@@ -10,7 +10,7 @@
 baseURL = "http://localhost:1313/"
 
 # 网站标题，显示在左上角和浏览器标签上
-title = "技术笔记"
+title = "钰|技术笔记"
 
 # 主题名（不要改）
 theme = "PaperMod"
@@ -67,7 +67,7 @@ timeZone = "Asia/Shanghai"     # 文章日期按北京时间显示
   keywords = ["技术笔记", "Linux", "Docker", "Python", "MySQL", "前端", "效率工具"]
   author = "钰"                 # ← 改成你的名字/昵称
   avatarURL="/头像.png"             #头像
-  DateFormat = "2012-01-02"
+  DateFormat = "2004-01-02"
   defaultTheme = "auto"               # auto 跟随系统深色/浅色，可改 light / dark
   disableThemeToggle = false
   disableLangToggle = true            # 单语言站点，关掉语言切换按钮
