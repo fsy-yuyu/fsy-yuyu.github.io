@@ -65,8 +65,8 @@ timeZone = "Asia/Shanghai"     # 文章日期按北京时间显示
   env = "production"
   description = "记录 Linux、容器、数据库、前端与工具链的技术笔记。"
   keywords = ["技术笔记", "Linux", "Docker", "Python", "MySQL", "前端", "效率工具"]
-  author = "你的名字"                 # ← 改成你的名字/昵称
-  DateFormat = "2006-01-02"
+  author = "钰"                 # ← 改成你的名字/昵称
+  DateFormat = "2012-01-02"
   defaultTheme = "auto"               # auto 跟随系统深色/浅色，可改 light / dark
   disableThemeToggle = false
   disableLangToggle = true            # 单语言站点，关掉语言切换按钮
@@ -80,13 +80,13 @@ timeZone = "Asia/Shanghai"     # 文章日期按北京时间显示
   ShowBreadCrumbs = true
   ShowPostNavLinks = true             # 上一篇/下一篇
   ShowRssButtonInSectionTermList = true
-  ShowShareButtons = false            # 分享按钮，想开就改 true
+  ShowShareButtons = true            # 分享按钮，想开就改 true
   ShowAllPagesInArchive = false
   mainSections = ["posts"]            # 只把 content/posts 下的文章算进首页/归档
 
   # 首页欢迎语（homeInfo 模式）
   [params.homeInfoParams]
-    Title = "你好，我是「你的名字」"
+    Title = "你好，我是「钰」"
     Content = """
 这里是我的技术笔记本：把学过的 Linux、容器、数据库、前端和工具链，
 按主题整理成能直接照着做的笔记。
@@ -99,7 +99,7 @@ timeZone = "Asia/Shanghai"     # 文章日期按北京时间显示
   # 社交图标（不需要的删掉即可）
   [[params.socialIcons]]
     name = "github"
-    url = "https://github.com/你的GitHub用户名"
+    url = "https://github.com/钰"
 
   [[params.socialIcons]]
     name = "rss"
