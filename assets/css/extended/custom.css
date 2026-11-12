@@ -253,3 +253,37 @@
     font-size: 13px;
     color: var(--secondary);
 }
+
+/* 首页头像 */
+.home-info .entry-header {
+    text-align: center;
+}
+
+.home-avatar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.home-avatar img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--border);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    background: var(--tertiary);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.home-avatar img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.14);
+}
+
+@media screen and (max-width: 640px) {
+    .home-avatar img {
+        width: 96px;
+        height: 96px;
+    }
+}
