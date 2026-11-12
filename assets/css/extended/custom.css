@@ -291,3 +291,7 @@
         height: 96px;
     }
 }
+
+.about-header .post-title {
+    text-align: center;
+}

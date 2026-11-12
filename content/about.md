@@ -10,9 +10,8 @@ ShowWordCount: false
 ShowBreadCrumbs: false
 ---
 
-<h1 style="texe-align:center">钰</h1>
 
-## 这个博客是做什么的
+## 这个博客是做什么
 
 &emsp;&emsp;一个技术笔记本。把平时用到的 Linux、容器、数据库、前端和工具链，整理成「下次还能照着做」的样子。
 
