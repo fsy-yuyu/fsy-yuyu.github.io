@@ -1,0 +1,20 @@
+{{- with site.Params.homeInfoParams }}
+{{- $avatarURL := site.Params.avatarURL | default "/avatar.png" }}
+<article class="first-entry home-info">
+    <header class="entry-header">
+        {{- if $avatarURL }}
+        <div class="home-avatar">
+            <img draggable="false" src="{{ $avatarURL | absURL }}" alt="avatar" />
+        </div>
+        {{- end }}
+        <h1>{{ .Title | markdownify }}</h1>
+    </header>
+    <div class="entry-content md-content">
+        {{ $opts := dict "display" "block" }}
+        {{ .Content | $.Page.RenderString $opts }}
+    </div>
+    <footer class="entry-footer">
+        {{ partial "social_icons.html" (dict "align" site.Params.homeInfoParams.AlignSocialIconsTo) }}
+    </footer>
+</article>
+{{- end -}}
