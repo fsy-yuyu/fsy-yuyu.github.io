@@ -10,7 +10,6 @@ ShowWordCount: false
 ShowBreadCrumbs: false
 ---
 
-
 ## 这个博客是做什么
 
 &emsp;&emsp;一个技术笔记本。把平时用到的 Linux、容器、数据库、前端和工具链，整理成「下次还能照着做」的样子。
@@ -34,7 +33,7 @@ ShowBreadCrumbs: false
 
 <!-- 这里改成你自己的介绍：职业、方向、正在学什么、联系方式 -->
 
-- 方向：后端 / 运维 / 前端 /安全 /渗透
+- 方向：渗透 / 安全 / 运维 / 前端 / 后端 
 - 常用技术：Linux、Docker、Python、MySQL
 - 联系方式：f520sy@126.com
 
