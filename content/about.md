@@ -1,5 +1,5 @@
 ---
-title: "关于"
+title: "钰"
 layout: "about"
 url: "/about/"
 summary: "关于这个博客"
@@ -10,9 +10,11 @@ ShowWordCount: false
 ShowBreadCrumbs: false
 ---
 
+<h1 style="texe-align:center">钰</h1>
+
 ## 这个博客是做什么的
 
-一个技术笔记本。把平时用到的 Linux、容器、数据库、前端和工具链，整理成「下次还能照着做」的样子。
+&emsp;&emsp;一个技术笔记本。把平时用到的 Linux、容器、数据库、前端和工具链，整理成「下次还能照着做」的样子。
 
 原则只有三条：
 
@@ -20,7 +22,7 @@ ShowBreadCrumbs: false
 2. **有边界**：写清适用版本和前提条件，避免照抄踩坑。
 3. **能追溯**：关键结论标出依据，不确定的地方明说。
 
-## 内容怎么组织
+## 内容怎么分类
 
 | 方式 | 入口 | 用途 |
 | --- | --- | --- |
@@ -33,9 +35,9 @@ ShowBreadCrumbs: false
 
 <!-- 这里改成你自己的介绍：职业、方向、正在学什么、联系方式 -->
 
-- 方向：后端 / 运维 / 前端（按实际情况改）
+- 方向：后端 / 运维 / 前端 /安全 /渗透
 - 常用技术：Linux、Docker、Python、MySQL
-- 联系方式：把邮箱或 GitHub 换成你自己的
+- 联系方式：f520sy@126.com
 
 ## 关于本站
 
@@ -43,4 +45,4 @@ ShowBreadCrumbs: false
 - 托管：GitHub Pages，推送后自动构建
 - 写作：Markdown，一篇文章一个文件夹
 
-想照着搭一个同样的博客，见笔记 [用 Hugo + PaperMod 搭一个能长期写的技术博客](/posts/2026/08/hugo-blog-setup/)。
+想照着搭一个同样的博客，见我的笔记 [用 Hugo + PaperMod 搭一个能长期写的技术博客](/posts/2026/08/hugo-blog-setup/)。

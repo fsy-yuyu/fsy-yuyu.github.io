@@ -156,7 +156,7 @@ timeZone = "Asia/Shanghai"     # 文章日期按北京时间显示
   weight = 50
 
 [[menus.main]]
-  name = "关于"
+  name = "钰"
   url = "/about/"
   weight = 60
 
