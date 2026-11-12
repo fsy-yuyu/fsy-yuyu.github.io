@@ -1,5 +1,6 @@
 ---
 title: "关于"
+layout: "about"
 url: "/about/"
 summary: "关于这个博客"
 searchHidden: true

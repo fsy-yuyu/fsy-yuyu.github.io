@@ -259,13 +259,15 @@
     text-align: center;
 }
 
-.home-avatar {
+.home-avatar,
+.about-avatar {
     display: flex;
     justify-content: center;
     margin-bottom: 16px;
 }
 
-.home-avatar img {
+.home-avatar img,
+.about-avatar img {
     width: 120px;
     height: 120px;
     border-radius: 50%;
@@ -276,13 +278,15 @@
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.home-avatar img:hover {
+.home-avatar img:hover,
+.about-avatar img:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 24px rgba(0, 0, 0, 0.14);
 }
 
 @media screen and (max-width: 640px) {
-    .home-avatar img {
+    .home-avatar img,
+    .about-avatar img {
         width: 96px;
         height: 96px;
     }
